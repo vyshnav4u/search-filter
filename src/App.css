@@ -107,7 +107,27 @@ input:focus {
 }
 
 .display-data-wrap {
+  background: #242222;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
   margin-top: 80px;
   display: grid;
   justify-content: center;
+}
+
+.display-data-wrap li {
+  padding: 8px;
+}
+
+.continent-data > li {
+  font-weight: 900;
+  font-size: 20px;
+  color: rgb(112, 112, 112);
+}
+
+.country-data > li {
+  font-weight: 600;
+  font-size: 18px;
+  color: rgb(163, 162, 162);
 }

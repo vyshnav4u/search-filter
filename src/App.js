@@ -6,7 +6,7 @@ import ShowData from "./components/ShowData";
 function App() {
   const [userInput, setUserInput] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [totContinent, setTotContinent] = useState([]);
+  // const [totContinent, setTotContinent] = useState([]);
   let totalOfContinent = 0;
   let totalOfContinentArr = [];
 
@@ -30,6 +30,7 @@ function App() {
               continent: continentName,
               country: countryName,
               city: cityName,
+              value: city.value,
             };
 
             tempSuggestion.push(matchCity);
@@ -37,10 +38,10 @@ function App() {
         }
       }
 
-      setTotContinent([
-        ...totContinent,
-        { name: continent.label, value: totalOfContinent },
-      ]);
+      // setTotContinent([
+      //   ...totContinent,
+      //   { name: continent.label, value: totalOfContinent },
+      // ]);
     }
     setSuggestions(tempSuggestion);
   }, [userInput]);
@@ -58,6 +59,7 @@ function App() {
             id="city-search"
             onChange={(e) => setUserInput(e.target.value)}
             value={userInput}
+            autoComplete="off"
           />
           <button id="btn-search">Search</button>
         </div>

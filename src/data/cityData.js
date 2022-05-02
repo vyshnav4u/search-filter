@@ -55,3 +55,7 @@ export const locations = [
     ],
   },
 ];
+
+// export const cityStd = {
+//   [cityId]: { cityName: "Sample", countryName: "india", continentName: "Asia" },
+// };
