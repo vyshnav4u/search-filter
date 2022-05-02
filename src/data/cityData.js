@@ -1,5 +1,6 @@
 export const locations = [
   {
+    id: "cont1",
     label: "Asia",
     children: [
       {
@@ -8,29 +9,30 @@ export const locations = [
         children: [
           {
             label: "Delhi",
-            value: 124,
+            value: 3412,
           },
           {
             label: "Chennai",
-            value: 125,
+            value: 1235,
           },
           {
             label: "Mumbai",
-            value: 124,
+            value: 1324,
           },
           {
-            value: 124,
+            value: 3124,
             label: "Kochi",
           },
           {
             label: "Coimbatore",
-            value: 124,
+            value: 2324,
           },
         ],
       },
     ],
   },
   {
+    id: "cont2",
     label: "America",
     children: [
       {
@@ -38,12 +40,15 @@ export const locations = [
         children: [
           {
             label: "Washington DC",
+            value: 2324,
           },
           {
             label: "Los Angeles",
+            value: 4134,
           },
           {
             label: "New York",
+            value: 5237,
           },
         ],
       },

@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { locations } from "./data/cityData";
+import ShowData from "./components/ShowData";
 
 function App() {
   const [userInput, setUserInput] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [totContinent, setTotContinent] = useState([]);
+  let totalOfContinent = 0;
+  let totalOfContinentArr = [];
 
   useEffect(() => {
     const tempSuggestion = [];
@@ -14,8 +18,10 @@ function App() {
     }
 
     for (const continent of locations) {
+      totalOfContinent = 0;
       for (const country of continent.children) {
         for (const city of country.children) {
+          totalOfContinent += city.value;
           const cityName = city.label;
           if (cityName.toLowerCase().includes(userInput.toLowerCase())) {
             const continentName = continent.label;
@@ -30,15 +36,14 @@ function App() {
           }
         }
       }
+
+      setTotContinent([
+        ...totContinent,
+        { name: continent.label, value: totalOfContinent },
+      ]);
     }
     setSuggestions(tempSuggestion);
   }, [userInput]);
-
-  // useEffect(() => {
-  //   suggestions.map((place) => {
-  //     console.log(place);
-  //   });
-  // }, [suggestions]);
 
   return (
     <div className="App">
@@ -71,6 +76,9 @@ function App() {
             })}
           </ul>
         </div>
+      </section>
+      <section>
+        <ShowData suggestions={suggestions}></ShowData>
       </section>
     </div>
   );
