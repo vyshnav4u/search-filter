@@ -99,3 +99,15 @@ input:focus {
   /* border-color: #719ece;
   box-shadow: 0 0 10px #719ece; */
 }
+
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.display-data-wrap {
+  margin-top: 80px;
+  display: grid;
+  justify-content: center;
+}
